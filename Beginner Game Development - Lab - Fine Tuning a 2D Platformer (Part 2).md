@@ -1,7 +1,7 @@
 # Beginner Game Development - Lab - Fine Tuning a 2D Platformer (Part 2)
 
 *In this lab, we will build upon our **2D platformer project** by enhancing the player controller with advanced movement techniques: **Coyote Time, Wall Sliding, and Wall Jumping**. These mechanics improve the feel and responsiveness of the game, making movement more fluid and enjoyable for players.*
-
+![Platformer Examples - Trinki by Rob Blofield](<Platformer Player Controller (Trinki).gif>)
 ---
 
 ## **Core Concepts for This Lab**
