@@ -38,7 +38,7 @@ We will need additional colliders or logic to detect walls:
 Modify the \`PlayerController\` script to include a short delay that allows jumping slightly after falling off a ledge.
 
 #### **Starting Code for Coyote Time:**
-\`\`\`csharp
+```csharp
 private float coyoteTime = 0.1f; // How long the player has after leaving ground to still jump
 private float coyoteTimeCounter;
 
@@ -59,7 +59,8 @@ void Update()
         coyoteTimeCounter = 0f;
     }
 }
-\`\`\`
+```
+
 ✅ This ensures the player has a small buffer to jump after leaving the ground, improving responsiveness.
 
 ---
@@ -68,7 +69,8 @@ void Update()
 When the player moves against a wall, they should slide down instead of falling at full speed.
 
 #### **Starting Code for Wall Sliding:**
-\`\`\`csharp
+```csharp
+
 private bool isWallSliding;
 private float wallSlideSpeed = 2f;
 
@@ -88,7 +90,8 @@ private bool IsTouchingWall()
     return Physics2D.OverlapCircle(leftWallCheck.position, 0.1f, wallLayer) ||
            Physics2D.OverlapCircle(rightWallCheck.position, 0.1f, wallLayer);
 }
-\`\`\`
+```
+
 ✅ This limits downward speed when touching a wall, making the descent feel controlled.
 
 ---
@@ -97,7 +100,8 @@ private bool IsTouchingWall()
 After sliding down a wall, the player should be able to jump off it.
 
 #### **Starting Code for Wall Jumping:**
-\`\`\`csharp
+```csharp
+
 private bool isWallJumping;
 private float wallJumpTime = 0.2f;
 private Vector2 wallJumpDirection = new Vector2(1, 1.5f);
@@ -120,7 +124,8 @@ void ResetWallJump()
 {
     isWallJumping = false;
 }
-\`\`\`
+```
+
 ✅ This allows the player to jump away from walls dynamically, adding a new layer of platforming control.
 
 ---
@@ -134,10 +139,12 @@ void ResetWallJump()
 
 ### **Step 7: Debug Logging**
 Modify the script to include debug logs for testing.
-\`\`\`csharp
+```csharp
+
 if (isWallSliding) Debug.Log("Wall Sliding");
 if (isWallJumping) Debug.Log("Wall Jumping");
-\`\`\`
+```
+
 ✅ These logs help verify when the mechanics activate.
 
 ---
